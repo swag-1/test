@@ -1,0 +1,27 @@
+/* Standard Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  width: 100%;
+  height: 100%;
+  font-family: 'Nunito', sans-serif; /* The font from your screenshot */
+  background-color: #f8f9fc;
+}
+
+/* Flexbox Layout fix */
+.dashboard-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}

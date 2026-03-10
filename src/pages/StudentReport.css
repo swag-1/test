@@ -1,0 +1,235 @@
+.report-bg { background-color: #f0f2f5; padding-bottom: 50px; }
+
+.official-report-card {
+  background: #fff;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  position: relative;
+  padding: 60px;
+  border-top: 6px solid #2e59d9;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Watermark Background */
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  font-size: 150px;
+  font-weight: 900;
+  color: rgba(0,0,0,0.02);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.transcript-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1;
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.inst-logo {
+  width: 60px;
+  height: 60px;
+  background: #1a237e;
+  color: #fff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.institution-info h3 { font-size: 20px; font-weight: 800; color: #1a237e; margin: 0; }
+.contact-small { font-size: 12px; color: #858796; }
+
+.status-badge {
+  border: 2px solid #e74a3b;
+  color: #e74a3b;
+  padding: 5px 15px;
+  font-weight: 900;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.student-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  background: #f8f9fc;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.info-block label { display: block; font-size: 10px; color: #858796; text-transform: uppercase; letter-spacing: 1px; }
+.info-block span { font-weight: 700; color: #2d3748; font-size: 14px; }
+
+.performance-summary-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.summary-card {
+  border: 1px solid #eaecf4;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.summary-card h4 { margin: 0; font-size: 18px; color: #2d3748; }
+.summary-card label { font-size: 11px; color: #858796; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 800;
+  color: #4e73df;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  border-left: 3px solid #4e73df;
+  padding-left: 10px;
+}
+
+.matrix-table { width: 100%; border-collapse: collapse; margin-bottom: 40px; }
+.matrix-table th { text-align: left; font-size: 11px; color: #858796; padding: 12px; border-bottom: 2px solid #f8f9fc; }
+.matrix-table td { padding: 14px 12px; font-size: 14px; border-bottom: 1px solid #f8f9fc; }
+.subject-name { font-weight: 700; color: #2d3748; }
+
+.score-cell { color: #858796; font-weight: 600; }
+.score-cell.highlight { color: #4e73df; background: #f8faff; font-weight: 800; }
+.avg-cell { font-weight: 800; color: #1a237e; }
+
+.pass-pill { background: #e3fcef; color: #00875a; padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 900; }
+
+.visual-analytics { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 30px; }
+
+.key-grid { display: grid; grid-template-columns: 1fr; gap: 8px; }
+.key-grid div { display: flex; justify-content: space-between; font-size: 12px; border-bottom: 1px dashed #eee; padding-bottom: 4px; }
+
+.signature-area { margin-top: 60px; display: flex; justify-content: space-between; align-items: flex-end; }
+.sig-line { width: 200px; height: 1px; background: #2d3748; margin-bottom: 10px; }
+.sig-block p { font-size: 12px; color: #858796; text-align: center; }
+
+.seal {
+  width: 80px;
+  height: 80px;
+  border: 4px double #d1d3e2;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 900;
+  color: #d1d3e2;
+  transform: rotate(-15deg);
+}
+
+@media print {
+  .no-print { display: none !important; }
+  .official-report-card { box-shadow: none; border: none; padding: 0; }
+  .report-bg { background: white; }
+}
+
+.report-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  max-width: 950px;
+  margin: 0 auto 20px auto;
+  padding: 0 10px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* Base Button Style */
+.btn-print, .btn-export {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  letter-spacing: 0.3px;
+}
+
+/* Print Button: Clean, Outlined, Professional */
+.btn-print {
+  background: #ffffff;
+  color: #4e73df;
+  border: 2px solid #eaecf4;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.btn-print:hover {
+  background: #f8f9fc;
+  border-color: #4e73df;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(78, 115, 223, 0.1);
+}
+
+.btn-print:active {
+  transform: translateY(0);
+}
+
+/* Export Button: Bold, Solid, "The Closer" */
+.btn-export {
+  background: linear-gradient(135deg, #4e73df 0%, #224abe 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(78, 115, 223, 0.25);
+}
+
+.btn-export:hover {
+  background: linear-gradient(135deg, #2e59d9 0%, #1e3a8a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(78, 115, 223, 0.35);
+}
+
+.btn-export:active {
+  transform: translateY(0);
+}
+
+/* Icon Animation on Hover */
+.btn-print:hover svg {
+  animation: bounce 0.5s ease infinite alternate;
+}
+
+.btn-export:hover svg {
+  animation: slideDown 0.5s ease infinite;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-3px); }
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-4px); opacity: 0; }
+  50% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(4px); opacity: 0; }
+}
+
+/* Hide from Printed Page */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

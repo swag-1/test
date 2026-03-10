@@ -1,0 +1,168 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background: #1e293b; /* Deep Slate */
+  color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar-header {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.logo-box {
+  background: #4f46e5;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.brand-text h3 { margin: 0; font-size: 18px; }
+.brand-text span { font-size: 11px; color: #94a3b8; text-transform: uppercase; }
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 12px;
+}
+
+.nav-group { margin-bottom: 20px; }
+
+.group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.group-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  color: #94a3b8;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.nav-item:hover { background: rgba(255,255,255,0.05); color: white; }
+.nav-item.active { background: #4f46e5; color: white; }
+
+/* Sub-menu logic */
+.sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding-left: 15px;
+}
+
+.is-open .sub-menu { max-height: 500px; }
+.is-open .chevron { transform: rotate(180deg); }
+.chevron { transition: 0.3s; color: #64748b; }
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+/* ... Keep your existing styles above ... */
+
+/* 1. Mobile Toggle Button (Hidden by default) */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001; /* Above sidebar */
+  background: #4f46e5;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 2. Sidebar Overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+/* 3. Mobile Media Query */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block; /* Show hamburger */
+  }
+
+  .sidebar-overlay {
+    display: block; /* Enabled when triggered */
+  }
+
+  .sidebar {
+    position: fixed;
+    left: 0;
+    z-index: 1000;
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 10px 0 30px rgba(0,0,0,0.2);
+  }
+
+  /* When sidebar has the mobile-open class */
+  .sidebar.mobile-open {
+    transform: translateX(0); /* Slide in */
+  }
+
+  /* Adjust branding for mobile to make room for toggle if needed */
+  .sidebar-header {
+    padding-top: 60px; /* Space for the X button */
+  }
+}
+
+/* Optional: Smooth scrolling for the nav area */
+.sidebar-nav::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-nav::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}

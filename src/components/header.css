@@ -1,0 +1,48 @@
+.top-header {
+  height: 70px;
+  width: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+}
+
+.header-search {
+  display: flex;
+  background: #f8f9fc;
+  border: 1px solid #e3e6f0;
+  border-radius: 20px;
+  padding: 5px 15px;
+  width: 300px;
+}
+
+.header-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  padding: 5px;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 20px;
+  border-left: 1px solid #e3e6f0;
+}
+
+.user-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5a5c69;
+}

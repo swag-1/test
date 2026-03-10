@@ -1,0 +1,185 @@
+.page-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.page-heading { font-size: 24px; font-weight: 700; color: #5a5c69; margin: 0; }
+.page-subheading { color: #b7b9cc; margin: 5px 0 0 0; }
+
+.action-btns { display: flex; gap: 10px; }
+.btn-primary, .btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary { background: #4e73df; color: white; }
+.btn-secondary { background: white; color: #5a5c69; border: 1px solid #d1d3e2; }
+
+/* Table Controls */
+.table-controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px !important;
+  margin-bottom: 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8f9fc;
+  padding: 8px 15px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  color: #5a5c69;
+}
+
+/* Table Design */
+.table-card { padding: 0 !important; overflow: hidden; }
+.student-table { width: 100%; border-collapse: collapse; text-align: left; }
+.student-table th {
+  background: #f8f9fc;
+  padding: 15px 20px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #b7b9cc;
+  font-weight: 700;
+}
+
+.student-table td { padding: 15px 20px; border-bottom: 1px solid #f2f2f2; font-size: 14px; color: #5a5c69; }
+
+.student-profile-cell { display: flex; align-items: center; gap: 12px; }
+.avatar-small {
+  width: 35px;
+  height: 35px;
+  background: #eaecf4;
+  color: #4e73df;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.student-table-email { font-size: 11px; color: #b7b9cc; margin: 0; }
+.student-table-name { margin: 0; font-weight: 600; }
+.student-table-email1 { font-size: 13px; color: #b7b9cc; margin: 0; }
+
+/* Status Pills */
+.status-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+.status-pill.active { background: #e3fcef; color: #1cc88a; }
+.status-pill.inactive { background: #ffebe9; color: #e74a3b; }
+
+.id-badge { background: #f8f9fc; padding: 4px 8px; border-radius: 5px; font-family: monospace; }
+
+/* Filter Group Styling */
+.filter-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #d1d3e2;
+  color: #5a5c69;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background: #f8f9fc;
+  border-color: #4e73df;
+  color: #4e73df;
+}
+
+/* Custom Dropdown Styling */
+.filter-select-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.filter-select-wrapper::after {
+  content: '▼';
+  font-size: 10px;
+  color: #b7b9cc;
+  position: absolute;
+  right: 15px;
+  pointer-events: none;
+}
+
+.grade-select {
+  appearance: none; /* Removes default browser arrow */
+  background: white;
+  border: 1px solid #d1d3e2;
+  color: #5a5c69;
+  padding: 8px 35px 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.grade-select:focus {
+  border-color: #4e73df;
+}
+
+/* Table Actions Styling */
+.action-icon-btn {
+  background: transparent;
+  border: none;
+  color: #d1d3e2;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.action-icon-btn:hover {
+  background: #f8f9fc;
+  color: #4e73df;
+  transform: scale(1.1);
+}
+
+/* Row Hover Effect */
+.student-table tbody tr {
+  transition: background 0.2s;
+}
+
+.student-table tbody tr:hover {
+  background: #fcfdfe;
+}

@@ -1,0 +1,138 @@
+.academics-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px; }
+.academic-session-pill { background: #1e293b; color: #fff; padding: 10px 20px; border-radius: 12px; display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 13px; }
+
+/* Navigation Tabs */
+.academic-nav-tabs { display: flex; gap: 10px; background: #f1f5f9; padding: 6px; border-radius: 16px; margin-bottom: 30px; width: fit-content; }
+.academic-nav-tabs button { border: none; background: transparent; padding: 12px 24px; border-radius: 12px; display: flex; align-items: center; gap: 8px; font-weight: 700; color: #64748b; cursor: pointer; transition: 0.3s; }
+.academic-nav-tabs button.active { background: white; color: #6366f1; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+
+/* Curriculum Module */
+.module-grid { display: grid; grid-template-columns: 280px 1fr; gap: 30px; height: 600px; }
+.curriculum-sidebar { background: white; border-radius: 24px; padding: 20px; border: 1px solid #f1f5f9; }
+.h-item { padding: 15px; border-radius: 12px; display: flex; justify-content: space-between; font-weight: 700; color: #475569; cursor: pointer; margin-bottom: 5px; }
+.h-item.active { background: #eef2ff; color: #6366f1; }
+
+.syllabus-stack { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.syllabus-card { background: white; border-radius: 20px; padding: 25px; border: 1px solid #f1f5f9; }
+.unit-label { font-size: 11px; font-weight: 800; color: #94a3b8; text-transform: uppercase; }
+.status-pill { float: right; font-size: 10px; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+.status-pill.completed { background: #ecfdf5; color: #10b981; }
+.status-pill.in-progress { background: #fff7ed; color: #f59e0b; }
+
+/* Exam Suite Cards */
+.exam-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+.suite-card { background: white; padding: 30px; border-radius: 28px; border: 1px solid #f1f5f9; text-align: center; }
+.card-icon { width: 50px; height: 50px; border-radius: 15px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; }
+.card-icon.indigo { background: #eef2ff; color: #6366f1; }
+.card-icon.rose { background: #fff1f2; color: #f43f5e; }
+.card-icon.emerald { background: #ecfdf5; color: #10b981; }
+.btn-action { width: 100%; margin-top: 20px; padding: 12px; border-radius: 12px; border: 1px solid #e2e8f0; background: white; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.btn-action:hover { background: #1e293b; color: white; }
+
+/* Promotion Table */
+.promotion-panel { background: white; border-radius: 24px; padding: 30px; border: 1px solid #f1f5f9; }
+.promotion-table { width: 100%; border-collapse: collapse; margin-top: 25px; }
+.promotion-table th { text-align: left; padding: 15px; color: #94a3b8; font-size: 13px; border-bottom: 2px solid #f1f5f9; }
+.promotion-table td { padding: 20px 15px; border-bottom: 1px solid #f8fafc; font-weight: 600; font-size: 14px; }
+.elig-pass { color: #10b981; background: #ecfdf5; padding: 5px 12px; border-radius: 8px; }
+.elig-fail { color: #f43f5e; background: #fff1f2; padding: 5px 12px; border-radius: 8px; }
+
+/* --- RESPONSIVE ACADEMICS --- */
+
+@media (max-width: 1024px) {
+  /* Curriculum Grid: Stack sidebar on top of content */
+  .module-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .curriculum-sidebar {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Header: Stack title and session pill */
+  .academics-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Navigation Tabs: Make them scrollable instead of squished */
+  .academic-nav-tabs {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    justify-content: flex-start;
+    padding: 8px;
+    scrollbar-width: none; /* Firefox */
+  }
+  .academic-nav-tabs::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+  .academic-nav-tabs button {
+    padding: 10px 18px;
+    flex-shrink: 0;
+  }
+
+  /* Exam Grid: Single column */
+  .exam-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Promotion Table: The "Card Transformation" */
+  .promotion-table thead {
+    display: none; /* Hide headers on mobile */
+  }
+
+  .promotion-table, .promotion-table tbody, .promotion-table tr, .promotion-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .promotion-table tr {
+    margin-bottom: 20px;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    padding: 10px;
+  }
+
+  .promotion-table td {
+    text-align: right;
+    padding: 10px;
+    border-bottom: 1px solid #f8fafc;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Use pseudo-elements to show labels since we hid <thead> */
+  .promotion-table td::before {
+    content: attr(data-label);
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .premium-title {
+    font-size: 1.2rem;
+  }
+
+  .syllabus-stack {
+    grid-template-columns: 1fr;
+  }
+  
+  .promotion-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .btn-primary-indigo {
+    width: 100%;
+  }
+}

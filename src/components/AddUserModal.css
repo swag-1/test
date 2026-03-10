@@ -1,0 +1,72 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 20, 50, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-container {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.title-group { display: flex; align-items: center; gap: 12px; }
+.icon-box { background: #eef2ff; color: #4e73df; padding: 8px; border-radius: 8px; }
+.modal-header h3 { margin: 0; font-size: 18px; color: #1e293b; }
+
+.modal-form { padding: 24px; display: flex; flex-direction: column; gap: 20px; }
+
+.input-field { display: flex; flex-direction: column; gap: 8px; }
+.input-field label { font-size: 13px; font-weight: 600; color: #64748b; display: flex; align-items: center; gap: 6px; }
+
+.input-field input, .input-field select {
+  padding: 12px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.input-field input:focus, .input-field select:focus {
+  border-color: #4e73df;
+  box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.1);
+}
+
+.input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.cancel-btn { background: #f1f5f9; color: #64748b; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+.submit-btn { background: #4e73df; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; transition: background 0.2s; }
+.submit-btn:hover { background: #2e59d9; }
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-up { animation: slide-up 0.3s ease-out; }
